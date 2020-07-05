@@ -1,0 +1,5 @@
+Problem 2: Create dir with name "-okgoogle" and without name
+
+Solution 2:
+$ mkdir -- -okgoogle
+$ mkdir 

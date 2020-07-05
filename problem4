@@ -1,0 +1,36 @@
+Problem 4: Problem #4.  share and files and folder 
+
+
+create two users name jack and Jill  from command line
+create all the data under home directory of each users 
+login with jack user and create a file name  jack.txt using vim editor and write "hello jack"
+from jack user also create two directories name jack1 & jack2 
+now login from Jill user and create a file. Jill.txt using vim editor and write "hey jiil"
+from Jill also create two directoires named jill1 & jill2 
+
+## 1 create user jack and jill
+$ useradd jack jill
+$ passwd jack ##set "jack"
+$ passwd jill ## set "jill"
+### login with jack
+$ su jack
+chmod 0777 /home/jack
+vim jackfile ##enter something text in here file
+mkdir jack{1..2}
+
+
+### login with jill
+$ su jill
+$ chmod 0777 /home/jill
+$ vim jill ## enter something here alsoo in file
+$ mkdir jill{1..2}
+ 
+#### Finally we have to swap all data under home dirs of both 
+Note : we are at jill user
+$ cp -r /home/jack/* ./
+$ su jack
+$ cp -r /home/jill/* ./
+
+### After you can delete file but important to set permissions back 
+$ chmod	455 /home/jack && chmod 455 /home/jill
+
